@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -ex
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+cd "${SCRIPT_DIR}/../examples"
+curl -iv http://localhost:4318/v1/traces -X POST -H "Content-Type: application/json" -d @span.json
